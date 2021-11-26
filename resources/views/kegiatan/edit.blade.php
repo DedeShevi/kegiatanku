@@ -4,7 +4,7 @@
     <div class="container">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item active" aria-current="page">Tambah Data Kegiatan</li> 
+                <li class="breadcrumb-item active" aria-current="page">Edit Data Kegiatan</li> 
                </ol>
              </nav>
 
@@ -22,32 +22,32 @@
                              <div class="col-md-3">
                                  <div class="form-group">
                                      <label for="">Kode Kegiatan</label>
-                                     <input type="text" name="kode_kegiatan" class="form-control" id="" value="kode kegiatan">
+                                     <input type="text" name="kode_kegiatan" class="form-control" id="" value="{{$kegiatan->kode_activity}}">
                                  </div>
                              </div>
                              <div class="col-md-3">
                                  <div class="form-group">
-                                     <label for="">Kode Kegiatan</label>
-                                     <input type="text" name="judul" class="form-control" id="" value="judul kegiatan">
+                                     <label for="">Nama Kegiatan</label>
+                                     <input type="text" name="nama_kegiatan" class="form-control" id="" value="{{$kegiatan->nama_activity}}">
                                  </div>
                              </div>
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <label for="">image</label>
-                                        <input type="file" name="image" class="form-control" id="" >
+                                        <input type="file" name="image" class="form-control" id="" value="{{$kegiatan->image}}">
                                     </div>
                                 </div>
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <label for="">IDR</label>
-                                        <input type="text" name="idr" class="form-control" id="" >
+                                        <input type="text" name="idr" class="form-control" id="" value="{{$kegiatan->idr}}">
                                     </div>
                                 </div>
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <label for="">Status</label>
-                                        <select name="" id="" class="form-control">
-                                            <option value="">Silahkan Pilih Status</option>
+                                        <select name="status" id="" class="form-control">
+                                            <option value="{{$kegiatan->id}}">{{$kegiatan->status}}</option>
                                             <option value="Aktif">Aktif</option>
                                             <option value="Non-Aktif">Non-Aktif</option>
                                         </select>
@@ -55,20 +55,20 @@
                                 </div>
                                 <div class="col-md-3">
                                     <div class="form-group">
-                                        <label for="">Keteranan</label>
-                                        <input type="text" name="keterangan" class="form-control" id="" >
+                                        <label for="">Keterangan</label>
+                                        <input type="text" name="keterangan" class="form-control" id="" value="{{$kegiatan->desc}}">
                                     </div>
                                 </div>
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <label for="">Tanggal Mulai</label>
-                                        <input type="date" name="tgl_mulai" class="form-control" id="" >
+                                        <input type="date" name="tgl_mulai" class="form-control" id="" value="{{$kegiatan->tgl_awal}}">
                                     </div>
                                 </div>
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <label for="">Tanggal Selesai</label>
-                                        <input type="date" name="tgl_selesai" class="form-control" id="" >
+                                        <input type="date" name="tgl_selesai" class="form-control" id="" value="{{$kegiatan->tgl_selesai}}">
                                     </div>
                                 </div>
                                 <div class="col-md-12">

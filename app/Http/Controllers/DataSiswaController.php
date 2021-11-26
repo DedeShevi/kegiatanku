@@ -2,13 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use App\Role;
 use Illuminate\Http\Request;
 
-class DataSiswaController extends Controller
+class DatasiswaController extends Controller
 {
     public function index()
     {
-        return view('data.siswa.index');
+        $students = Role::with('users')->where('name', 'student')->latest()->paginate(6);
+
+        return view('data.siswa.index', compact('students'));
     }
 
     public function create()

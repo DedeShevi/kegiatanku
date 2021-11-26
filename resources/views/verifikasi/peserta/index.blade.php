@@ -28,7 +28,9 @@
                                         <input type="date" class="form-control">
                                     </div>
                                 </div>
-                               
+                                <div>
+                                    <button class="btn btn-secondary" type="submit">Cari Data</button>
+                                </div>
                             </div>
                         </form>
 
@@ -38,28 +40,31 @@
                                     <tr>
                                         <th>Kode Kegiatan</th>
                                         <th>NISN</th>
-                                        <th>tgl daftar</th>
                                         <th>Nama</th>
+                                        <th>TGL Daftar</th>
                                         <th>Status</th>
-                                       
+                                        <th>Option</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($verifikasiPembayarans as $pembayaran)
+                                    @foreach ($registers as $register)
+                                        
                                     <tr>
-                                        <td>{{$pembayaran->activity->kode_activity}}</td>
-                                        <td>NISN Belum terisi</td>
-                                        <td>{{$pembayaran->created_at->diffForHumans()}}</td>
-                                        <td>{{$pembayaran->user->name}}</td>
+                                        <td>{{$register->activity->kode_activity}}</td>
+                                        <td>Field belum dibuat</td>
+                                        <td>{{$register->user->name}}</td>
+                                        <td>{{$register->created_at->diffForHumans()}}</td>
                                         <td>
-                                            <span class="badge bg-secondary text-white">
-                                                {{$pembayaran->status}}</td>
-                                            </span>
-                                    </tr>  
+                                            <span class="badge badge-info">
+                                                {{$register->status}}</td>
+                                            </span>                               
+                                        <td>
+                                            <a href="http://" class="btn btn-info btn-sm">Cetak  Sertifikat</a>
+                                        </td>
+                                    </tr>
                                     @endforeach
                                 </tbody>
                             </table>
-                            {{$verifikasiPembayarans->links()}}
                         </div>
                     </div>
                 </div>

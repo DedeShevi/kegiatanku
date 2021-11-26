@@ -22,9 +22,25 @@
                              <div class="col-md-3">
                                  <div class="form-group">
                                      <label for="">NISN</label>
-                                     <input type="text" name="nisn" class="form-control" id="" value="NISN">
+                                     <input type="text" name="nisn" class="form-control" id="" placeholder="Silahkan isi NISN siswa">
                                  </div>
                              </div>
+                             <div class="col-md-3">
+                                <div class="form-group">
+                                    <label for="">Nama</label>
+                                    <input type="text" name="nama" class="form-control" id="" placeholder="Silahkan isi Nama siswa">
+                                </div>
+                            </div>
+                                <div class="col-md-3">
+                                   <div class="form-group">
+                                       <label for="">Jenis Kelamin</label>
+                                       <select name="jenis_kelamin" id="" class="form-control">
+                                           <option value="">Silahkan Pilih Jenis Kelamin</option>
+                                           <option value="Laki-Laki">Laki-Laki</option>
+                                           <option value="Perempuan">Perempuan</option>
+                                       </select>
+                                   </div>
+                                </div> 
                              <div class="col-md-3">
                                  <div class="form-group">
                                      <label for="">Agama</label>
