@@ -15,9 +15,9 @@
                             Silahkan isi dibawah ini dengan benar.
                      </div>
 
-                     <form action="" method="post">
+                     <form action="{{route('updated.data.siswa', $user->id)}}" method="post">
                          @csrf
-
+                         @method('PATCH')
                          <div class="row">
                              <div class="col-md-3">
                                  <div class="form-group">
@@ -28,13 +28,13 @@
                              <div class="col-md-3">
                                  <div class="form-group">
                                      <label for="">Nama</label>
-                                     <input type="text" name="nama" class="form-control" id="" placeholder="isi nama siswa">
+                                     <input type="text" class="form-control" id="" value="{{$user->name}}" placeholder="isi nama siswa">
                                  </div>
                              </div>
                                  <div class="col-md-3">
                                     <div class="form-group">
                                         <label for="">Jenis Kelamin</label>
-                                        <select name="religion" id="" class="form-control">
+                                        <select name="gender" id="" class="form-control">
                                             <option value="">Silahkan Pilih Jenis Kelamin</option>
                                             <option value="Laki-Laki">Laki-Laki</option>
                                             <option value="Perempuan">Perempuan</option>
@@ -44,7 +44,7 @@
                              <div class="col-md-3">
                                  <div class="form-group">
                                      <label for="">Agama</label>
-                                     <select name="agama" id="" class="form-control">
+                                     <select name="religion" id="" class="form-control">
                                          <option value="">Silahkan Pilih Agama</option>
                                          <option value="Islam">Islam</option>
                                          <option value="Kristen">Kristen</option>
