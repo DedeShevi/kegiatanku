@@ -47,22 +47,21 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($kegiatans as $it)
+                                    @foreach ($kegiatans as $activity)
                                     <tr>
-                                            <td>{{$it->kode_activity}}</td>
-                                            <td>{{$it->nama_activity}}</td>
-                                            <td>{{$it->idr}}</td>
-                                            <td>{{$it->status}}</td>
-                                            <td>{{$it->desc}}</td>
-                                            <td>{{$it->jumlah_peserta}}</td>
-                                            <td>{{$it->tgl_awal}}</td>
-                                            <td>{{$it->tgl_selesai}}</td>
-                                        
+                                            <td>{{$activity->kode_activity}}</td>
+                                            <td>{{$activity->nama_activity}}</td>
+                                            <td>{{$activity->idr}}</td>
+                                            <td>{{$activity->status}}</td>
+                                            <td>{{$activity->desc}}</td>
+                                            <td>{{$activity->jumlah_peserta}}</td>
+                                            <td>{{$activity->tgl_awal}}</td>
+                                            <td>{{$activity->tgl_selesai}}</td>                  
                                         <td>
-                                            <form action="{{route('manage-kegiatan.delete', $it->id) }}" method="post">
+                                            <form action="{{route('destroy.data.activity', $activity->id) }}" method="post">
                                                 @csrf
                                                 @method('DELETE')
-                                            <a href="{{route('manage-kegiatan.add-form.edit-kegiatan', $it->id)}}" class="btn btn-success btn-sm">Edit</a>
+                                            <a href="{{route('edit.data.activity', $activity->id)}}" class="btn btn-success btn-sm">Edit</a>
                                              <button class="btn btn-danger btn-sm" type="submit">Hapus</button>
                                         </form>
                                            
