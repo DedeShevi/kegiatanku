@@ -15,7 +15,7 @@
                             Silahkan isi dibawah ini dengan benar.
                      </div>
 
-                     <form action="{{route('update.data.kegiatan', $kegiatan->id)}}" method="post">
+                     <form action="{{route('update.data.kegiatan', $kegiatan->id)}}" method="post" enctype="multipart/form-data">>
                          @csrf
                          @method('PATCH')
 
@@ -35,7 +35,7 @@
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <label for="">image</label>
-                                        <input type="file" name="image" class="form-control" id="" value="{{$kegiatan->image}}">
+                                        <input type="file" name="image" class="form-control" id="">
                                     </div>
                                 </div>
                                 <div class="col-md-3">

@@ -43,14 +43,18 @@
                             <tbody>
                                 @foreach ($students as $student)
                                     <tr>
-                                        <td>{{$student->users->first()->students->first()->nisn ?? 'Belum tersedia'}}</td>
-                                        <td>{{$student->users->first()->name}}</td>
-                                        <td>{{$student->users->first()->students->first()->class ?? 'Belum tersedia'}}</td>
-                                        <td>{{$student->users->first()->students->first()->major ?? 'Belum tersedia'}}</td>
-                                        <td>{{$student->users->first()->students->first()->status ?? 'Belum tersedia'}}</td>
+                                        <td>{{$student->students->first()->nisn ?? 'Belum tersedia'}}</td>
+                                        <td>{{$student->name}}</td>
+                                        <td>{{$student->students->first()->class ?? 'Belum tersedia'}}</td>
+                                        <td>{{$student->students->first()->major ?? 'Belum tersedia'}}</td>
+                                        <td>{{$student->students->first()->status ?? 'Belum tersedia'}}</td>
                                         <td>
-                                            <a href="{{route('edit-data.siswa', $student->users->first()->id)}}" class="btn btn-secondary btn-sm">Edit</a>
-                                            <button type="submit" class="btn btn-secondary btn-sm">Hapus</button>
+                                            <form action="{{route('destroy.data.siswa', $student->id)}}" method="post">
+                                                @csrf
+                                                @method('DELETE')
+                                                <a href="{{route('edit-data.siswa', $student->id)}}" class="btn btn-secondary btn-sm">Edit</a>
+                                                <button type="submit" class=" btn btn-danger btn-sm">Hapus</button>
+                                            </form>
                                         </td>
                                     </tr>
                                 @endforeach
