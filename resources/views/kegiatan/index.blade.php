@@ -13,6 +13,7 @@
                     <div class="card-body">
                         <div class="mb-3">
                             <a href="{{route('manage-kegiatan.add-form')}}" class="btn btn-success">Tambah Kegiatan</a>
+                            <a href="{{route('cetak.all-data.activity')}}" class="btn btn-success">Cetak Semua Data Kegiatan</a>
                         </div>
                         <form action="{{route('cetak.activity')}}" method="get">
                             <div class="row">
