@@ -12,6 +12,7 @@
         "alfa6661/laravel-autonumber": "^1.2",
         "fideloper/proxy": "^4.0",
         "laracasts/flash": "^3.0",
+        "barryvdh/laravel-dompdf": "^0.8.4",
         "laravel/framework": "5.7.*",
         "laravel/tinker": "^1.0",
         "spatie/laravel-permission": "^2.37"
