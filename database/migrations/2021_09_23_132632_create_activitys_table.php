@@ -20,7 +20,7 @@ class CreateActivitysTable extends Migration
             $table->string('image');
             $table->string('idr');
             $table->string('status');
-            $table->string('desc');
+            $table->longText('desc');
             $table->string('jumlah_peserta');
             $table->string('tgl_awal');
             $table->string('tgl_selesai');

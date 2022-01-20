@@ -9,6 +9,34 @@
 @import '~bootstrap/scss/bootstrap';
 
 .navbar-laravel {
-  background-color: #fff;
+  background-image: linear-gradient(to right, #136a8a, #267871);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+  color: #ffff;
+}
+.jumbotron {
+  background-image: linear-gradient(to right, #136a8a, #267871);
+  color: #ffff;
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+}
+.nav-link {
+  color: white;
+
+}
+
+@media (min-width: 480px) {
+  .jumbotron { height: 200px; }
+}
+
+@media (min-width: 768px) {
+  .jumbotron { height: 303px; }
+}
+
+@media (min-width: 992px) {
+  .jumbotron { height: 327px; }
 }
