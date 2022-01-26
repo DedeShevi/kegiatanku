@@ -28,9 +28,9 @@ class KegiatanController extends Controller
         return view('daftar.create', compact('activity'));
     }
 
-    public function store(Request $request, $id)    
+    public function store(Request $request)    
     {       
-        $user = User::findOrFail($id);
+        $user = User::findOrFail(Auth::user()->id);
         
         $register = Register::create([
             'user_id'   => $user->id,

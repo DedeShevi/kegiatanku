@@ -8,6 +8,11 @@
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
+body{
+  background-color: rgb(247, 248, 253);
+  opacity:1;
+}
+
 .navbar-laravel {
   background-image: linear-gradient(to right, #136a8a, #267871);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);

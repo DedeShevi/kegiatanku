@@ -23,7 +23,7 @@ Route::group(['prefix' => 'kegiatan'], function(){
     Route::get('/tampilkan', 'KegiatanController@show')->name('kegiatan.tampilkan');
     Route::get('/index', 'KegiatanController@index')->name('kegiatan.index');
     Route::get('/create{kegiatan}', 'KegiatanController@create')->name('kegiatan.create');
-    Route::post('/store{user}', 'KegiatanController@store')->name('kegiatan.store');
+    Route::post('/store', 'KegiatanController@store')->name('kegiatan.store');
 });
 Route::get('/pendaftaran', 'DaftarController@index')->name('daftar.index');
 Route::get('/dashboard', 'HomeController@index')->name('dashboard.index');
