@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Activity;
 use App\Register;
 use App\Payment;
 use Intervention\Image\Facades\Image;
@@ -26,8 +27,14 @@ class PaymentController extends Controller
         if ($verifikasi->save()) {
             $get = Register::findOrFail($verifikasi->register_id);
 
+            $activity = Activity::findOrFail($get->activity_id);
+            
+            $hitung = $activity->jumlah_peserta - $get->qty;
             $get->update ([
                 'status'  => 'terverifikasi'
+            ]);
+            $activity->update ([
+                'jumlah_peserta' => $hitung
             ]);
         }
 

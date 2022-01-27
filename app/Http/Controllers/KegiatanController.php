@@ -33,9 +33,10 @@ class KegiatanController extends Controller
         $user = User::findOrFail(Auth::user()->id);
         
         $register = Register::create([
-            'user_id'   => $user->id,
+            'user_id'     => $user->id,
             'activity_id' => $request->activity_id,
-            'status' => $request->status,
+            'status'      => $request->status,
+            'qty'         => $request->qty,
         ]);
 
         $to = Mail::to($user->email)->send(new PendaftaranMail($register));

@@ -18,7 +18,7 @@ class CreateRegistersTable extends Migration
             $table->unsignedInteger('user_id');
             $table->unsignedInteger('activity_id');
             $table->string('status');
-            $table->string('image')->nullable();
+            $table->string('qty');
             $table->timestamps();
         });
     }
