@@ -23,14 +23,14 @@
         </div>
         @endforeach
     </div>
-<div class="row py-4">
+<div class="row pt-4">
     @foreach ($activitys as $activity)
-        <div class="col-md-12">
-            <div class="card-border-0">
+        <div class="col-md-12 mb-4">
+            <div class="card border-0">
                 <div class="card-body">
                     <div class="d-flex justify-content-between">
                         <div class="d-flex">
-                        <img src="{{url('storage/'. $activity->image)}}" alt="" width="100px" height="100px" class="rounded">
+                        <img src="{{url('storage/'. $activity->image)}}" alt="" class="mr-3 rounded" width="100px" height="100px" class="rounded">
                             <div>
                                 <h3 class="text-danger">{{$activity->nama_activity}}</h3>
                                 <p class ="text-muted">

@@ -79,7 +79,19 @@ Route::group(['prefix' =>'destroy'], function(){
     route::delete('data/activity/{activity}','ManagekegiatanController@destroy')->name('destroy.data.activity');
 });
 
+Route::group(['prefix' => 'sms'], function() {
+    Route::get('create', 'SmsController@create')->name('sms.create');
+    Route::post('sms/{sms}', 'SmsController@store')->name('sms.send');
+});
+
 Route::group(['prefix' =>'cetak'], function(){
     Route::get('activity', 'Report\ActivityController@index')->name('cetak.activity');
     route::get('data-activity', 'Report\ActivityController@edit')->name('cetak.all-data.activity');
 });
+
+Route::group(['prefix' => 'activity'], function(){
+    route::get('/', 'KegiatankuController@index')->name('activity');
+});
+
+route::get('cetak/sertifikat/{register}', 'Pendaftaran\VerifiedController@sertifikat')->name('cetak.sertifikat');
+Auth::routes();

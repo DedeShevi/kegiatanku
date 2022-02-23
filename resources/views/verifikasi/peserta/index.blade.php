@@ -60,7 +60,7 @@
                                             </span>
                                         </td>
                                         <td>
-                                            <a href="http://" class="btn btn-info btn-sm">Cetak Sertifikat</a>
+                                            <a href="{{route('cetak.sertifikat', $register->id)}}" class="btn btn-info btn-sm">Cetak Sertifikat</a>
                                         </td>
                                     </tr>
                                 @endforeach

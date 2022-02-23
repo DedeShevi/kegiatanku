@@ -53,6 +53,9 @@
                             <li class="nav-item">
                                 <a href="{{route('/')}}" class="nav-link">{{ __('Cek Kegiatan') }}</a>
                             </li>
+                            <li class="nav-item">
+                                <a href="{{route('activity')}}" class="nav-link">{{ __('Kegiatan Ku') }}</a>
+                            </li>
                         @endrole
                     </ul>
 
