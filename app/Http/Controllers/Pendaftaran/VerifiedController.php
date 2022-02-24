@@ -6,6 +6,7 @@ use PDF;
 use App\Activity;
 use Illuminate\Support\Facades\Auth;
 use App\Register;
+use \Milon\Barcode\DNS1D;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -17,7 +18,11 @@ class VerifiedController extends Controller
         return view('verifikasi.verified.index', compact('verifieds'));
     }
     public function sertifikat($id)
-    {$sertifikat = Register::findOrFail($id);
+    {
+        // $code = DNS1D::getBarcodeSVG('4445645656', 'PHARMA2T');
+        // dd($code);
+    
+    $sertifikat = Register::findOrFail($id);
         $pdf = PDF::loadView('cetak.sertifikat', compact('sertifikat'))->setPaper('a4', 'landscape');
 
         return $pdf->stream('sertifikat.pdf');

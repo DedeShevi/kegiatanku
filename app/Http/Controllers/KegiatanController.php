@@ -40,17 +40,19 @@ class KegiatanController extends Controller
             'qty'         => $request->qty,
         ]);
 
-        if ($user->save()) {
-            $user = User::findOrFail(Auth::user()->id);
+        // if ($user->save()) {
+        //     $user = User::findOrFail(Auth::user()->id);
 
-            Nexmo::message()->send([
-                'to' =>   $user->phone,
-                'from' => 'Kegiatanku',
-                'text'  => 'Hello, kami dari TIM Kegiatan ingin memberitahukan kepada anda bahwa anda telah berhasil membeli tiket.'
+        //     Nexmo::message()->send([
+        //         'to' =>   $user->phone,
+        //         'from' => 'Kegiatanku',
+        //         'text'  => 'Hello, kami dari TIM Kegiatan ingin memberitahukan kepada anda bahwa anda telah berhasil membeli tiket.'
 
-               . 'Terima Kasih!'
-                ]);
-        }
+        //        . 'Terima Kasih!'
+        //         ]);
+        // }
+
+        $to = Mail::to($user->email)->send(new PendaftaranMail($register));
         return redirect()->back();
     }
 }
